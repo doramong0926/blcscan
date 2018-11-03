@@ -1,0 +1,22 @@
+{
+  "name": "blcscan",
+  "data": {
+    "web3": {
+      "networkType": "ropsten",
+      "provideVendor": "infura"
+    },
+    "etherScan": {
+      "providerMainNet": "https://api.etherscan.io/api",
+      "providerRopsten": "https://api-ropsten.etherscan.io/api",
+      "apiKey": "ZGZW3C6175M2MNQTS14HDDIGBYFDHEMXBR"
+    },
+    "infura": {
+      "providerMainNet": "https://mainnet.infura.io/",
+      "providerRopsten": "https://ropsten.infura.io/",
+      "apiKey": "boKaU6ROXir6GBk9fqEk"
+    }
+  }
+}
+
+
+
