@@ -18,8 +18,7 @@ router.get('/balance/', async (req, res) => {
             "message" : current_block === -1 ? 'Fail to get current_block' : '',
             'result' : current_block === -1 ? '' : current_block,
         }
-    }
-    catch {
+    } catch (error) {
         ret_data = {
             'status' : '0',
             "message": 'Fail to get current_block',
@@ -45,8 +44,7 @@ router.get('/current_eth_block/', async (req, res) => {
             "message" : current_block === -1 ? 'Fail to get current_block' : '',
             'result' : current_block === -1 ? '' : current_block,
         }
-    }
-    catch {
+    } catch (error) {
         ret_data = {
             'status' : '0',
             "message": 'Fail to get current_block',
@@ -75,8 +73,7 @@ router.get('/transaction_list/', async (req, res) => {
             "message" : found_tx_list === -1 ? 'Fail to get transaction_list' : '',
             'result' : found_tx_list === -1 ? '' : found_tx_list,
         }
-    }
-    catch {
+    } catch (error) {
         ret_data = {
             'status' : '0',
             "message": 'Fail to get transaction_list',
@@ -105,8 +102,7 @@ router.get('/transaction_list/eth/', async (req, res) => {
             "message" : found_tx_list === -1 ? 'Fail to get blc transaction_list' : '',
             'result' : found_tx_list === -1 ? '' : found_tx_list,
         }
-    }
-    catch {
+    } catch (error) {
         ret_data = {
             'status' : '0',
             "message": 'Fail to get eth transaction_list',
@@ -136,8 +132,7 @@ router.get('/transaction_list/blc/', async (req, res) => {
             "message" : found_tx_list === -1 ? 'Fail to get blc transaction_list' : '',
             'result' : found_tx_list === -1 ? '' : found_tx_list,
         }
-    }
-    catch {
+    } catch (error) {
         ret_data = {
             'status' : '0',
             "message": 'Fail to get blc transaction_list',
