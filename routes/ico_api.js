@@ -54,7 +54,7 @@ router.get('/transaction_list/', async (req, res) => {
             'status' : found_tx_list === -1 ? '0' : '1',
             "message" : found_tx_list === -1 ? 'Fail to get transaction_list' : '',
             'result' : found_tx_list === -1 ? '' : found_tx_list,
-        }
+        }        
     } catch (error) {
         ret_data = {
             'status' : '0',

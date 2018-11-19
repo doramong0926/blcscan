@@ -220,12 +220,12 @@ module.exports.getIcoTransactionList = async (queryInfo) => {
         if (foundEthTransactionList.data.status === '1') {
             foundEthTransactionList.data.result.map(item => {
                 if (item.value !== '0' &&
-                    queryInfo.wallet_address === null ? 
+                    (queryInfo.wallet_address === null ? 
                         (item.from !== queryInfo.owner_address &&  item.to === queryInfo.ico_address)
                     :
                         ((item.from === queryInfo.wallet_address &&  item.to === queryInfo.ico_address)
-                        || (item.from === queryInfo.wallet_address &&  item.to === queryInfo.owner_address))
-                ) {
+                        || (item.from === queryInfo.wallet_address &&  item.to === queryInfo.owner_address)))
+                ) {                    
                     ret_data.transaction_list.push({
                         'symbol' : 'ETH',
                         'receipt_status' : item.txreceipt_status,
@@ -259,12 +259,12 @@ module.exports.getIcoTransactionList = async (queryInfo) => {
         if (foundBlcTransactionList.data.status === '1') {
             foundBlcTransactionList.data.result.map(item => {
                 if (item.value !== '0' &&
-                    queryInfo.wallet_address === null ? 
+                    (queryInfo.wallet_address === null ? 
                         ((item.from === queryInfo.ico_address && item.to !== queryInfo.owner_address)
                         || (item.from === queryInfo.owner_address && item.to !== queryInfo.ico_address))
                      :
                         ((item.from === queryInfo.ico_address  && item.to === queryInfo.wallet_address)
-                        || (item.from === queryInfo.owner_address  && item.to === queryInfo.wallet_address))
+                        || (item.from === queryInfo.owner_address  && item.to === queryInfo.wallet_address)))
                 ) {
                     ret_data.transaction_list.push({
                         'symbol' : 'BLC',
